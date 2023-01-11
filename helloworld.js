@@ -5,3 +5,4 @@ function helloWorld() {
 function helloNode() {
     console.log("Hello Node");
 }
+helloWorld();
