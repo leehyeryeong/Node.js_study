@@ -12,4 +12,7 @@ function chkOddEven(number) {
     }
 }
 
+module.exports = chkOddEven;
+//module.exports !== exports === {};
+
 export default chkOddEven; //module.exports는 파일에서 한 번만
