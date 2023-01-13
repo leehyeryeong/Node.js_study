@@ -2,7 +2,7 @@ const {odd, even} = require('./var'); //구조 분해 할당 시 속성명 == �
 const chkNumber = require('./func');
 
 function chkStringOddEven(str) {
-    if(str % 2 != 0) {
+    if(str.length % 2 != 0) {
         return odd;
     } else {
         return even;
