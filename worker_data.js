@@ -1,4 +1,4 @@
-const { Worker, isMainThread, parentPort, workerData, } = require('worker_threads');
+const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
 
 if(isMainThread) {  //메인 스레드
     const threads = new Set();
