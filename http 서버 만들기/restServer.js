@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs').promises;
 const path = require('path');
 
-const users = {}; // 데이터 저장용
+const users = {}; //데이터 저장용
 
 http.createServer(async (req, res) => {
   try {
@@ -24,16 +24,16 @@ http.createServer(async (req, res) => {
         const data = await fs.readFile(path.join(__dirname, req.url));
         return res.end(data);
       } catch (err) {
-        // 주소에 해당하는 라우트를 못 찾았다는 404 Not Found error 발생
+        //주소에 해당하는 라우트를 못 찾았다는 404 Not Found error 발생
       }
     } else if (req.method === 'POST') {
       if (req.url === '/user') {
         let body = '';
-        // 요청의 body를 stream 형식으로 받음
+        //요청의 body를 stream 형식으로 받음
         req.on('data', (data) => {
           body += data;
         });
-        // 요청의 body를 다 받은 후 실행됨
+        //요청의 body를 다 받은 후 실행됨
         return req.on('end', () => {
           console.log('POST 본문(Body):', body);
           const { name } = JSON.parse(body);
